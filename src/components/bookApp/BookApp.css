@@ -1,0 +1,52 @@
+.delButton {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 15px;
+}
+.Ico{
+    width: 23px;
+    height: auto;
+}
+.bookImg{
+    margin-right: 10px;
+}
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addBook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+.inp{
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #000000;
+	border-radius: 7px 7px 0 0;
+	padding: .4em;
+	width: 150px;
+    margin-right: 10px;
+}
+.inpSerch{
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #000000;
+	border-radius: 7px 7px 0 0;
+	padding: .4em;
+	width: 300px;
+}
+.addButton{
+    border: none;
+    background-color: #d5d5d5;
+    margin-top: 5px;
+}
