@@ -45,7 +45,7 @@ function BookApp() {
   };
 
   return (
-    <div className='container'>
+    <div className='contoiner'>
       <h1><img src= "ibooks.png" className='Ico'/>BookApp</h1>
       <input type="text" placeholder="Пошук..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className='inpSearch'/>
       <ul>
