@@ -3,7 +3,6 @@ import "./BookApp.css"
 
 function BookApp() {
   const [books, setBooks] = useState(() => {
-    // Load books from local storage or use the default value
     const storedBooks = JSON.parse(localStorage.getItem('books')) || [
       { id: 1, title: 'Книга 1', author: 'Автор 1', read: true },
       { id: 2, title: 'Книга 2', author: 'Автор 2', read: false },
@@ -18,7 +17,6 @@ function BookApp() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Save books to local storage whenever the 'books' state changes
     localStorage.setItem('books', JSON.stringify(books));
   }, [books]);
 
