@@ -1,0 +1,22 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    background-color: #f5611a;
+    color: white;
+    text-align: center;
+}
+.footerCopyright{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.subRight{
+    font-size: 12px;
+}
+.Ico{
+    width: 23px;
+    height: auto;
+}

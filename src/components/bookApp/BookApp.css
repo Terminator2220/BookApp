@@ -7,6 +7,7 @@
     display: inline-block;
     font-size: 16px;
     margin-left: 15px;
+    cursor: pointer;
 }
 .Ico{
     width: 23px;
@@ -14,6 +15,7 @@
 }
 .bookImg{
     margin-right: 10px;
+    cursor: pointer;
 }
 .conteiner{
     display: flex;
@@ -35,18 +37,96 @@
 	padding: .4em;
 	width: 150px;
     margin-right: 10px;
+    cursor:pointer;
+    font-size: 20px;
 }
-.inpSerch{
+.inpSearch{
 	appearance: none;
 	border: none;
 	outline: none;
 	border-bottom: .2em solid #000000;
 	border-radius: 7px 7px 0 0;
 	padding: .4em;
-	width: 300px;
+	width: 180px;
+    cursor:pointer;
+    margin-left: -21px;
+    font-size: 20px;
 }
 .addButton{
     border: none;
     background-color: #d5d5d5;
     margin-top: 5px;
+    cursor:pointer;
+    font-size: 20px;
 }
+.subRight{
+    font-size: 12px;
+}
+
+
+@media screen and (min-width: 200px) {
+    .delButton {
+        background-color: #ffffff;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    .Ico{
+        width: 23px;
+        height: auto;
+    }
+    .bookImg{
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .conteiner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .addBook{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+    }
+    .inp{
+        appearance: none;
+        border: none;
+        outline: none;
+        border-bottom: .2em solid #000000;
+        border-radius: 7px 7px 0 0;
+        padding: .4em;
+        width: 100px;
+        margin-right: 10px;
+        cursor:pointer;
+        font-size: 15px;
+    }
+    .inpSearch{
+        appearance: none;
+        border: none;
+        outline: none;
+        border-bottom: .2em solid #000000;
+        border-radius: 7px 7px 0 0;
+        padding: .4em;
+        width: 180px;
+        cursor:pointer;
+        margin-left: -21px;
+        font-size: 15px;
+    }
+    .addButton{
+        border: none;
+        background-color: #d5d5d5;
+        margin-top: 5px;
+        cursor:pointer;
+        font-size: 15px;
+    }
+    .subRight{
+        font-size: 8px;
+    }
+  }
