@@ -1,18 +1,17 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import BookList from '../bookList/BookList';
 import AddBookForm from '../AddBookForm/AddBookForm';
 import './BookApp.css';
 
-
 function BookApp() {
     const [books, setBooks] = useState(() => {
         const storedBooks = JSON.parse(localStorage.getItem('books')) || [
-            { id: 1, title: 'JavaScript for Kids', author: 'Nick Morgan', read: true },
-            { id: 2, title: 'HTML & CSS (English)', author: 'Emil Maltesen Frandsen', read: true },
-            { id: 3, title: 'Mullumbimby', author: 'Melissa Lucashenko (UQP)', read: false },
-            { id: 4, title: 'After The Lights Go Out', author: 'Lili Wilkinson (Allen & Unwin)', read: true },
-            { id: 5, title: 'Gravity is the Thing', author: 'Jaclyn Moriarty (Pan Macmillan)', read: false },
-        ];
+        { id: 1, title: 'JavaScript for Kids', author: 'Nick Morgan', read: true },
+        { id: 2, title: 'HTML & CSS (English)', author: 'Emil Maltesen Frandsen', read: true },
+        { id: 3, title: 'Mullumbimby', author: 'Melissa Lucashenko (UQP)', read: false },
+        { id: 4, title: 'After The Lights Go Out', author: 'Lili Wilkinson (Allen & Unwin)', read: true },
+        { id: 5, title: 'Gravity is the Thing', author: 'Jaclyn Moriarty (Pan Macmillan)', read: false },
+    ];
         return storedBooks;
     });
 
@@ -23,36 +22,55 @@ function BookApp() {
         localStorage.setItem('books', JSON.stringify(books));
     }, [books]);
 
-    const addBook = () => {
+    const addBook = useCallback(() => {
         if (newBook.title && newBook.author) {
-            setBooks([
-                ...books,
-                { id: books.length + 1, ...newBook, read: false },
+            setBooks((prevBooks) => [
+                ...prevBooks,
+                { id: prevBooks.length + 1, ...newBook, read: false },
             ]);
             setNewBook({ title: '', author: '' });
         }
-    };
+    }, [newBook, setBooks]);
 
-    const deleteBook = (id) => {
-        setBooks(books.filter((book) => book.id !== id));
-    };
+    const deleteBook = useCallback((id) => {
+        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+    }, [setBooks]);
 
-    const toggleReadStatus = (id) => {
-        setBooks(
-            books.map((book) =>
+    const toggleReadStatus = useCallback((id) => {
+        setBooks((prevBooks) =>
+            prevBooks.map((book) =>
                 book.id === id ? { ...book, read: !book.read } : book
             )
         );
-    };
+    }, [setBooks]);
+
+    const memoizedBookList = useMemo(
+        () => (
+            <BookList
+                books={books}
+                searchTerm={searchTerm}
+                toggleReadStatus={toggleReadStatus}
+                deleteBook={deleteBook}
+            />
+        ),
+        [books, searchTerm, toggleReadStatus, deleteBook]
+    );
+
     return (
         <div className='conteiner'>
             <h1>
-                <img src="ibooks.png" className='Ico' />
+                <img src="ibooks.png" alt='Ico' className='Ico' />
                 BookApp
                 <sub className='subRight'>®</sub>
             </h1>
-            <input type="text" placeholder="Пошук..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className='inpSearch' />
-            <BookList books={books} searchTerm={searchTerm} toggleReadStatus={toggleReadStatus} deleteBook={deleteBook} />
+            <input
+                type="text"
+                placeholder="Пошук..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className='inpSearch'
+            />
+            {memoizedBookList}
             <AddBookForm newBook={newBook} setNewBook={setNewBook} addBook={addBook} />
         </div>
     );

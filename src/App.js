@@ -10,18 +10,15 @@ function App() {
       <footer className='footer'>
         <div className='footerCopyright'>
           <div>
-            © 2023-2024, Inc. All right reserved.
-          </div>
-          <div>
               <h3>
-                <img src="ibooks.png" className='Ico' />
+                <img src="ibooks.png" alt='Ico' className='Ico' />
                 BookApp
                 <sub className='subRight'>®</sub>
               </h3> 
           </div>
-        </div>
-        <div>
-          
+          <div>
+            © 2023-2024, Inc. All right reserved.
+          </div>
         </div>
       </footer>
     </div>
