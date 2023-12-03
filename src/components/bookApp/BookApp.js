@@ -19,7 +19,7 @@ function BookApp() {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        localStorage.clear();
+        localStorage.setItem('books', JSON.stringify(books));
     }, [books]);
 
     const addBook = useCallback(() => {
