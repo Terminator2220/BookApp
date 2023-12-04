@@ -49,7 +49,7 @@ ul {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 7px;
+    font-size: 5px;
   }
 }
 @media screen and (max-width: 500px) {
