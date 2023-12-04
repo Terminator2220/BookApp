@@ -19,7 +19,7 @@ function App() {
           <div>
             © 2023-2024, Inc. All right reserved.
           </div>
-    <div><sub>v.2.5.9</sub></div>
+    <div className='VersionName'><sub>v.2.5.9</sub></div>
         </div>
       </footer>
     </div>
