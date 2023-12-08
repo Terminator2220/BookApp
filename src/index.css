@@ -17,16 +17,44 @@ ul {
   list-style: none;
   margin-left: -42px;
 }
+/* Загальні стилі */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+}
 
-/* Додайте медіа-запит для адаптації до пристроїв з меншою шириною екрану */
-@media screen and (max-width: 768px) {
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  list-style: none;
+  margin-left: -42px;
+}
+
+/* Адаптація для телефонів */
+@media only screen and (max-width: 600px) {
   body {
-    font-size: 8px; /* Зменште розмір шрифту для менших екранів */
-  }
-
-  ul {
-    margin-left: 0; /* Зменште відступ для менших екранів або використовуйте відсотки */
+    font-size: 8px; /* Налаштуйте розмір шрифту для телефонів за потребою */
   }
 }
 
-/* Додайте інші медіа-запити за потребою для інших адаптацій */
+/* Адаптація для планшетів */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 18px; /* Налаштуйте розмір шрифту для планшетів за потребою */
+  }
+}
+
+/* Адаптація для малих ноутбуків */
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+  body {
+    font-size: 20px; /* Налаштуйте розмір шрифту для малих ноутбуків за потребою */
+  }
+}
