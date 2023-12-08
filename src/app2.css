@@ -8,18 +8,52 @@
     color: white;
     text-align: center;
 }
-.footerCopyright{
+
+.footerContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+}
+
+.footerLogo img {
+    width: 23px;
+    height: auto;
+}
+
+.footerLogo h3 {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.footerCopyright {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-.subRight{
+
+.subRight {
     font-size: 12px;
 }
-.Ico{
-    width: 23px;
-    height: auto;
+
+.footerVersion {
+    display: flex;
+    align-items: center;
 }
-.VersionName{
-    dispaly:flex;
+
+.VersionName sub {
+    margin-left: 5px;
+}
+
+/* Додатковий стиль для центрування версії */
+.VersionName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
