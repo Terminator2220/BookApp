@@ -32,9 +32,8 @@
 }
 
 .footerCopyright {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
 .subRight {
