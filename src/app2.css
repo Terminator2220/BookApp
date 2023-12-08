@@ -50,8 +50,6 @@
 .VersionName sub {
     margin-left: 5px;
 }
-
-/* Додатковий стиль для центрування версії */
 .VersionName {
     display: flex;
     justify-content: center;
