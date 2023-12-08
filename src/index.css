@@ -19,7 +19,8 @@ ul {
 }
 
 
-@media screen and (min-width: 200px) {
+@media screen and (max-width:320px) {
+  # Phone
   ul {
     list-style: none;
     margin-left: -42px;
@@ -36,7 +37,8 @@ ul {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width:769px) {
+  # Desktop
   ul {
     list-style: none;
     margin-left: -42px;
@@ -52,7 +54,8 @@ ul {
     font-size: 5px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (min-width:321px) and (max-width:768px) {
+  # Tablet
   ul {
     list-style: none;
     margin-left: -42px;
