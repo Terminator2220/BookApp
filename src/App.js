@@ -5,24 +5,24 @@ import './app2.css'
 
 function App() {
   return (
-    <div>
-      <BookApp />
-      <footer className='footer'>
-        <div className='footerCopyright'>
-          <div>
-              <h3>
-                <img src="ibooks.png" alt='Ico' className='Ico' />
-                BookApp
-                <sub className='subRight'>®</sub>
-              </h3> 
-          </div>
-          <div>
-            © 2023-2024, Inc. All right reserved.
-          </div>
-        </div>
-    <div className='VersionName'><sub>v.2.5.9</sub></div>
-      </footer>
+   <div>
+  <BookApp />
+  <footer className='footer'>
+    <div className='footerContent'>
+      <div className='footerLogo'>
+        <img src="ibooks.png" alt='Ico' className='Ico' />
+        <h3>BookApp<sub className='subRight'>®</sub></h3>
+      </div>
+      <div className='footerCopyright'>
+        © 2023-2024 BookApp, Inc. All rights reserved.
+      </div>
+      <div className='footerVersion'>
+        <sub>v.2.5.9</sub>
+      </div>
     </div>
+  </footer>
+</div>
+
   );
 }
 
