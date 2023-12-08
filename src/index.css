@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 code {
@@ -36,6 +36,6 @@ ul {
 /* Адаптація для малих ноутбуків */
 @media only screen and (min-width: 1025px) and (max-width: 1366px) {
   body {
-    font-size: 18px; /* Налаштуйте розмір шрифту для малих ноутбуків за потребою */
+    font-size: 16px; /* Налаштуйте розмір шрифту для малих ноутбуків за потребою */
   }
 }
