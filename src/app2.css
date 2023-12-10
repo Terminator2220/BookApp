@@ -2,7 +2,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 70px;
+    height: 55px;
     width: 100%;
     background-color: #f5611a;
     color: white;
@@ -40,6 +40,7 @@
 
 .subRight {
     font-size: 12px;
+    cursor: pointer;
 }
 
 .footerVersion {
@@ -54,4 +55,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.clearBut{
+    visibility: hidden;
 }
