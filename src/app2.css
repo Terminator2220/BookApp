@@ -19,6 +19,7 @@
 .footerLogo {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .footerLogo img {
@@ -46,6 +47,7 @@
 .footerVersion {
     display: flex;
     align-items: center;
+    margin-right: 5px;
 }
 
 .VersionName sub {
