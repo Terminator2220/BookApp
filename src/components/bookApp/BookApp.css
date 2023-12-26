@@ -9,60 +9,87 @@
     margin-left: 15px;
     cursor: pointer;
 }
-.Ico{
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.dialogBox {
+    display: none;
+}
+
+.Ico {
     width: 23px;
     height: auto;
 }
-.bookImg{
+
+.bookImg {
     margin-right: 10px;
     cursor: pointer;
 }
-.conteiner{
+
+.conteiner {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.addBook{
+
+.addBook {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
 }
-.inp{
-	appearance: none;
-	border: none;
-	outline: none;
-	border-bottom: .2em solid #000000;
-	border-radius: 7px 7px 0 0;
-	padding: .4em;
-	width: 150px;
+
+.inp {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-bottom: .2em solid #000000;
+    border-radius: 7px 7px 0 0;
+    padding: .4em;
+    width: 150px;
     margin-right: 10px;
-    cursor:pointer;
+    cursor: pointer;
     font-size: 20px;
 }
-.inpSearch{
-	appearance: none;
-	border: none;
-	outline: none;
-	border-bottom: .2em solid #000000;
-	border-radius: 7px 7px 0 0;
-	padding: .4em;
-	width: 180px;
-    cursor:pointer;
+
+.inpSearch {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-bottom: .2em solid #000000;
+    border-radius: 7px 7px 0 0;
+    padding: .4em;
+    width: 180px;
+    cursor: pointer;
     margin-left: -21px;
     font-size: 20px;
 }
-.addButton{
+
+.addButton {
     border: none;
     background-color: #d5d5d5;
     margin-top: 5px;
-    cursor:pointer;
+    cursor: pointer;
     font-size: 20px;
 }
-.subRight{
+
+.subRight {
     font-size: 12px;
 }
 
+.portal {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.594);
+    width: 314px;
+}
+
+.portalBtn {
+    margin-left: 10px;
+}
 
 @media screen and (min-width: 200px) {
     .delButton {
@@ -76,26 +103,31 @@
         margin-left: 15px;
         cursor: pointer;
     }
-    .Ico{
+
+    .Ico {
         width: 23px;
         height: auto;
     }
-    .bookImg{
+
+    .bookImg {
         margin-right: 10px;
         cursor: pointer;
     }
-    .conteiner{
+
+    .conteiner {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .addBook{
+
+    .addBook {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 5px;
     }
-    .inp{
+
+    .inp {
         appearance: none;
         border: none;
         outline: none;
@@ -104,10 +136,11 @@
         padding: .4em;
         width: 100px;
         margin-right: 10px;
-        cursor:pointer;
+        cursor: pointer;
         font-size: 15px;
     }
-    .inpSearch{
+
+    .inpSearch {
         appearance: none;
         border: none;
         outline: none;
@@ -115,18 +148,20 @@
         border-radius: 7px 7px 0 0;
         padding: .4em;
         width: 180px;
-        cursor:pointer;
+        cursor: pointer;
         margin-left: -21px;
         font-size: 15px;
     }
-    .addButton{
+
+    .addButton {
         border: none;
         background-color: #d5d5d5;
         margin-top: 5px;
-        cursor:pointer;
+        cursor: pointer;
         font-size: 15px;
     }
-    .subRight{
+
+    .subRight {
         font-size: 8px;
     }
-  }
+}
