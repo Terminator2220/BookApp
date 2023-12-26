@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import BookList from '../bookList/BookList';
 import AddBookForm from '../AddBookForm/AddBookForm';
 import './BookApp.css';
+import $ from 'jquery';
+import 'jquery-ui/ui/widgets/dialog';
 
 function BookApp() {
     const [books, setBooks] = useState(() => {
@@ -15,7 +17,6 @@ function BookApp() {
         return storedBooks;
     });
     const [maxId, setMaxId] = useState(10);
-
     const [newBook, setNewBook] = useState({ title: '', author: '' });
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -28,32 +29,85 @@ function BookApp() {
             const isDuplicate = books.some(
                 (book) => book.title === newBook.title && book.author === newBook.author
             );
-    
+
             if (isDuplicate) {
-                alert('Ця книга вже є в списку 😊');
+                $("#dialog").dialog({
+                    dialogClass: "no-close",
+                    buttons: [
+                        {
+                            text: "OK",
+                            click: function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    ]
+                });
             } else {
-                setBooks((prevBooks) => [
-                    ...prevBooks,
-                    { id: maxId + 1, ...newBook, read: false },
-                ]);
-                setNewBook({ title: '', author: '' });
-    
-                setMaxId(maxId + 1);
+                $("#dialogBook").dialog({
+                    dialogClass: "no-close",
+                    buttons: [
+                        {
+                            text: "✔",
+                            click: function () {
+                                $(this).dialog("close");
+                                setBooks((prevBooks) => [
+                                    ...prevBooks,
+                                    { id: maxId + 1, ...newBook, read: false },
+                                ]);
+                                setNewBook({ title: '', author: '' });
+                                setMaxId(maxId + 1);
+                            }
+                        }
+                    ]
+                });
             }
         }
     }, [newBook, setBooks, maxId, books]);
-    
 
     const deleteBook = useCallback((id) => {
-        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+        $("#dialogDellBook").dialog({
+            dialogClass: "no-close",
+            buttons: [
+                {
+                    text: "Сancel",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                {
+                    text: "Ok",
+                    click: function () {
+                        $(this).dialog("close");
+                        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+                    }
+                }
+            ]
+        });
     }, [setBooks]);
 
     const toggleReadStatus = useCallback((id) => {
-        setBooks((prevBooks) =>
-            prevBooks.map((book) =>
-                book.id === id ? { ...book, read: !book.read } : book
-            )
-        );
+        $("#dialogReadStatus").dialog({
+            dialogClass: "no-close",
+            buttons: [
+                {
+                    text: "Сancel",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                {
+                    text: "Ok",
+                    click: function () {
+                        $(this).dialog("close");
+                        setBooks((prevBooks) =>
+                            prevBooks.map((book) =>
+                                book.id === id ? { ...book, read: !book.read } : book
+                            )
+                        );
+                    }
+                }
+            ]
+        });
     }, [setBooks]);
 
     const memoizedBookList = useMemo(
@@ -67,7 +121,6 @@ function BookApp() {
         ),
         [books, searchTerm, toggleReadStatus, deleteBook]
     );
-
     return (
         <div className='conteiner'>
             <h1>
@@ -84,6 +137,18 @@ function BookApp() {
             />
             {memoizedBookList}
             <AddBookForm newBook={newBook} setNewBook={setNewBook} addBook={addBook} />
+            <div id="dialog" title="Massage" className='dialogBox'>
+                <p>You are trying to add a book that is already in the book list. Just change the name of the book you want to add!🤭</p>
+            </div>
+            <div id="dialogBook" title="Massage" className='dialogBox'>
+                <p>The book was successfully added!</p>
+            </div>
+            <div id="dialogDellBook" title="Massage" className='dialogBox'>
+                <p>Are you sure you want to delete this book?</p>
+            </div>
+            <div id="dialogReadStatus" title="Massage" className='dialogBox'>
+                <p>Are you sure you want to swich read status to this book?</p>
+            </div>
         </div>
     );
 }
