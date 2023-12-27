@@ -41,6 +41,10 @@
 
 .subRight {
     font-size: 12px;
+}
+
+.subRightClick {
+    font-size: 12px;
     cursor: pointer;
 }
 
