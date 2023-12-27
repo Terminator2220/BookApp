@@ -15,7 +15,7 @@ function App() {
         <div className='footerContent'>
           <div className='footerLogo'>
             <img src="ibooks.png" alt='Ico' className='Ico' />
-            <h3>BookApp<sub className='subRight' onClick={handleSubClick}>®</sub></h3>
+            <h3>BookApp<sub className='subRightClick' onClick={handleSubClick}>®</sub></h3>
           </div>
           <div className='footerCopyright'>
             © 2023-2024 BookApp, Inc. All rights reserved.
